@@ -7,9 +7,7 @@ from reportlab.pdfgen import canvas
 
 # Database setup
 DB_FILE = "recipes.db"
-openai.api_key = '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'  # Replace with your actual OpenAI API key
-
-
+openai.api_key = st.secrets.get("OPENAI_API_KEY")
 def setup_database():
     """Ensures the database and recipes table exist without UNIQUE constraints."""
     conn = sqlite3.connect(DB_FILE)
